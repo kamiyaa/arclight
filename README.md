@@ -1,7 +1,7 @@
 # arclight
 
 ## Description
-Similar to acpilight[https://github.com/wavexx/acpilight], but written in C and requires user to specify an interface
+Similar to [acpilight](https://github.com/wavexx/acpilight), but written in C and requires user to specify an interface
 Why C? Because I don't want programs holding back python system updates.
 
 ## Installation
