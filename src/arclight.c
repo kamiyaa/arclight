@@ -80,15 +80,18 @@ void offset_brightness(int change)
 
 int main(int argc, char **argv)
 {
+	if (argc == 1) {
+		list_ifaces();
+		return 0;
+	}
+
 	extern char *optarg;
 	int c, change = 0;
 	char s = 0;
+
 	char *interface = NULL;
-	while ((c = getopt(argc, argv, "lu:d:i:s:")) != -1) {
+	while ((c = getopt(argc, argv, "u:d:i:s:")) != -1) {
 		switch (c) {
-		case 'l':
-			list_ifaces();
-			return 0;
 		case 'u':
 			change = atoi(optarg);
 			break;
@@ -108,7 +111,7 @@ int main(int argc, char **argv)
 	}
 
 	if (interface == NULL) {
-		fprintf(stderr, "usage: %s [-l] [-ud] offset -i interface\n", argv[0]);
+		fprintf(stderr, "usage: %s [-i interface -ud offset]\n", argv[0]);
 		return 1;
 	}
 
