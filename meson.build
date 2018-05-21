@@ -1,5 +1,5 @@
 project(
-	'lekari',
+	'arclight',
 	'c',
 	meson_version: '>=0.41.2',
 	version: '0.7.0',
