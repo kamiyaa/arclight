@@ -110,7 +110,7 @@ int main(int argc, char **argv)
 		}
 	}
 
-	if (interface == NULL) {
+	if (interface == NULL || change == 0) {
 		fprintf(stderr, "usage: %s [-i interface -ud offset]\n", argv[0]);
 		return 1;
 	}
@@ -124,9 +124,6 @@ int main(int argc, char **argv)
 		}
 
 		while ((dir_entry = readdir(fp))) {
-			if (strcmp(dir_entry->d_name, ".") == 0 ||
-				strcmp(dir_entry->d_name, "..") == 0)
-				continue;
 			if (strcmp(dir_entry->d_name, interface) == 0) {
 				char dir_path[strlen(paths[i]) + strlen(dir_entry->d_name) + 2];
 				strcpy(dir_path, paths[i]);
