@@ -142,6 +142,6 @@ int main(int argc, char **argv)
 			}
 		}
 	}
-
-	return 0;
+	fprintf(stderr, "%s: error: failed to find '%s' interface\n", argv[0], interface);
+	return 1;
 }
